@@ -15,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <header className="bg-red-500 p-4">
-          <Image src="/logo.png" alt="" width={52} height={52} />
+      <body className="bg-background text-foreground">
+        <header className="bg-red-500 flex justify-between items-center p-4">
+          <Image src="/logo.png" alt="" width={44} height={44} />
         </header>
         {children}
         <footer className="bg-red-500">

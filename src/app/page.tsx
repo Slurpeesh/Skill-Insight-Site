@@ -1,3 +1,11 @@
+import {
+  Blocks,
+  Building2,
+  ChartBarDecreasing,
+  Globe,
+  MonitorCog,
+  SunMoon,
+} from 'lucide-react'
 import Image from 'next/image'
 
 export default async function Home() {
@@ -10,10 +18,8 @@ export default async function Home() {
       },
     }
   )
-  const data = await response.json()
-  const dataDownloadURLs = data.assets.map(
-    (item: any) => item.browser_download_url
-  )
+  const data: IRelease = await response.json()
+  const dataDownloadURLs = data.assets.map((item) => item.browser_download_url)
   const windowsExtensionURL = dataDownloadURLs.find((url: string) =>
     url.endsWith('.exe')
   )
@@ -29,7 +35,7 @@ export default async function Home() {
 
   return (
     <main className="p-5">
-      <section className="flex gap-5 justify-evenly items-center">
+      <section className="bg-slate-800 p-5 rounded-lg flex flex-col md:flex-row gap-5 justify-evenly items-center">
         <div className="flex-1 flex flex-col gap-10 justify-between items-center">
           <h1 className="text-5xl font-bold text-center">Skill Insight</h1>
           <p className="text-lg">
@@ -56,7 +62,7 @@ export default async function Home() {
               download
             >
               <Image
-                src="/windowsIcon.png"
+                src="/windowsIcon.svg"
                 alt="Windows icon"
                 width={32}
                 height={32}
@@ -70,7 +76,7 @@ export default async function Home() {
               download
             >
               <Image
-                src="/macOSIcon.png"
+                src="/macOSIcon.svg"
                 alt="MacOS icon"
                 width={32}
                 height={32}
@@ -84,7 +90,7 @@ export default async function Home() {
               download
             >
               <Image
-                src="/linuxRPMIcon.png"
+                src="/linuxRPMIcon.svg"
                 alt="Linux RPM package manager icon"
                 width={32}
                 height={32}
@@ -98,7 +104,7 @@ export default async function Home() {
               download
             >
               <Image
-                src="/linuxDebIcon.png"
+                src="/linuxDebIcon.svg"
                 alt="Linux Debian package manager icon"
                 width={32}
                 height={32}
@@ -118,7 +124,55 @@ export default async function Home() {
         </div>
       </section>
       <section className="mt-20">
-        <h2 className="text-center text-3xl font-semibold">Features</h2>
+        <h2 className="text-center text-3xl font-semibold mb-5">Features</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+          <div>
+            <div className="flex gap-2">
+              <ChartBarDecreasing />
+              <h3 className="font-medium text-xl">Key skills statistics</h3>
+            </div>
+
+            <p>Description</p>
+          </div>
+          <div>
+            <div className="flex gap-2">
+              <Building2 />
+              <h3 className="font-medium text-xl">Cities diagram</h3>
+            </div>
+            <p>Description</p>
+          </div>
+          <div>
+            <div className="flex gap-2">
+              <MonitorCog />
+              <h3 className="font-medium text-xl">Cross-platform</h3>
+            </div>
+
+            <p>Description</p>
+          </div>
+          <div>
+            <div className="flex gap-2">
+              <Globe />
+              <h3 className="font-medium text-xl">Multilanguage</h3>
+            </div>
+
+            <p>Description</p>
+          </div>
+          <div>
+            <div className="flex gap-2">
+              <SunMoon />
+              <h3 className="font-medium text-xl">Dark theme</h3>
+            </div>
+
+            <p>Description</p>
+          </div>
+          <div>
+            <div className="flex gap-2">
+              <Blocks />
+              <h3 className="font-medium text-xl">Region selection</h3>
+            </div>
+            <p>Description</p>
+          </div>
+        </div>
       </section>
     </main>
   )
