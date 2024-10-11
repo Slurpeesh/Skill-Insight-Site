@@ -99,7 +99,7 @@ export default async function Home() {
               <span>Linux</span> <em>.rpm</em>
             </a>
             <a
-              className="bg-red-600 rounded-md p-2 flex justify-center items-center gap-2"
+              className="bg-red-600 rounded-lg p-2 flex justify-center items-center gap-2"
               href={linuxDebExtensionURL}
               download
             >
@@ -126,51 +126,69 @@ export default async function Home() {
       <section className="mt-20">
         <h2 className="text-center text-3xl font-semibold mb-5">Features</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-          <div>
+          <div className="bg-slate-800 p-2 rounded-lg">
             <div className="flex gap-2">
               <ChartBarDecreasing />
               <h3 className="font-medium text-xl">Key skills statistics</h3>
             </div>
-
-            <p>Description</p>
+            <p>
+              View up-to-date statistics on required skills, the output is
+              available as “raw” data that can be copied and saved with the
+              further possibility of your own analysis, also the output is
+              presented in the form of a chart, if you just need to know the
+              most demanded skills in the specialty.
+            </p>
           </div>
-          <div>
+          <div className="bg-slate-800 p-2 rounded-lg">
             <div className="flex gap-2">
               <Building2 />
               <h3 className="font-medium text-xl">Cities diagram</h3>
             </div>
-            <p>Description</p>
+            <p>
+              In addition to a chart with the most in-demand skills, you can
+              also view statistics on job openings relative to the city.
+            </p>
           </div>
-          <div>
+          <div className="bg-slate-800 p-2 rounded-lg">
             <div className="flex gap-2">
               <MonitorCog />
               <h3 className="font-medium text-xl">Cross-platform</h3>
             </div>
-
-            <p>Description</p>
+            <p>
+              The app is available for Windows, macOS and Linux users. See
+              download links above.
+            </p>
           </div>
-          <div>
+          <div className="bg-slate-800 p-2 rounded-lg">
             <div className="flex gap-2">
               <Globe />
               <h3 className="font-medium text-xl">Multilanguage</h3>
             </div>
-
-            <p>Description</p>
+            <p>
+              Multiple language support is available, currently English and
+              Russian.
+            </p>
           </div>
-          <div>
+          <div className="bg-slate-800 p-2 rounded-lg">
             <div className="flex gap-2">
               <SunMoon />
               <h3 className="font-medium text-xl">Dark theme</h3>
             </div>
-
-            <p>Description</p>
+            <p>
+              The default theme is customized to match the theme of your device,
+              but if you need to, you can change the theme within the app itself
+              without affecting the theme of the device.
+            </p>
           </div>
-          <div>
+          <div className="bg-slate-800 p-2 rounded-lg">
             <div className="flex gap-2">
               <Blocks />
               <h3 className="font-medium text-xl">Region selection</h3>
             </div>
-            <p>Description</p>
+            <p>
+              Choose only the regions you want when collecting statistics.
+              Multiple selections are available.
+            </p>
           </div>
         </div>
       </section>

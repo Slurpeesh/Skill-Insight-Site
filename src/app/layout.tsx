@@ -17,7 +17,22 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-background text-foreground">
         <header className="bg-red-500 flex justify-between items-center p-4">
-          <Image src="/logo.png" alt="" width={44} height={44} />
+          <a href="">
+            <Image
+              src="/logo.svg"
+              alt="Logo of the Skill Insight representing decreasing horizontal bar chart with red bars"
+              width={44}
+              height={44}
+            />
+          </a>
+          <a href="https://github.com/Slurpeesh/Skill-Insight" target="_blank">
+            <Image
+              src="/githubIcon.svg"
+              alt="GitHub link to Skill Insight public repository"
+              width={44}
+              height={44}
+            />
+          </a>
         </header>
         {children}
         <footer className="bg-red-500">
