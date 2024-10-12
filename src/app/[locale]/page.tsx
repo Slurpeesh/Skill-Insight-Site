@@ -5,10 +5,15 @@ import MacOSSvg from '@/_svgs/MacOSSvg'
 import WindowsSvg from '@/_svgs/WindowsSvg'
 import FeatureList from '@/_widgets/FeatureList/FeatureList'
 import { ExternalLink } from 'lucide-react'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 
-export default async function Home() {
+export default async function Home({
+  params: { locale },
+}: Readonly<{
+  params: { locale: string }
+}>) {
+  unstable_setRequestLocale(locale)
   const t = await getTranslations('HomePage')
   const response = await fetch(
     'https://api.github.com/repos/Slurpeesh/Skill-Insight/releases/latest',
@@ -39,7 +44,7 @@ export default async function Home() {
   )
 
   return (
-    <main className="p-5">
+    <main className="p-5 pt-0">
       <section className="bg-muted p-5 rounded-lg flex flex-col md:flex-row gap-5 justify-evenly items-center">
         <div className="flex-1 flex flex-col gap-10 justify-between items-center">
           <h1 className="text-5xl font-bold text-center">Skill Insight</h1>

@@ -1,15 +1,26 @@
 import ThemeButton from '@/_features/ThemeButton/ThemeButton'
 import GithubSvg from '@/_svgs/GithubSvg'
-import type { Metadata } from 'next'
+import { routing } from '@/i18n/routing'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages, getTranslations } from 'next-intl/server'
+import {
+  getMessages,
+  getTranslations,
+  unstable_setRequestLocale,
+} from 'next-intl/server'
 import Image from 'next/image'
 import StoreProvider from '../StoreProvider'
 
-export const metadata: Metadata = {
-  title: 'Skill Insight',
-  description:
-    "Skill Insight is the desktop application, that displays statistics on key skills at the user's request",
+export async function generateMetadata({
+  params: { locale },
+}: Readonly<{
+  params: { locale: string }
+}>) {
+  const t = await getTranslations({ locale, namespace: 'Metadata' })
+
+  return {
+    title: 'Skill Insight',
+    description: t('metaDescription'),
+  }
 }
 
 export default async function LocaleLayout({
@@ -19,6 +30,7 @@ export default async function LocaleLayout({
   children: React.ReactNode
   params: { locale: string }
 }>) {
+  unstable_setRequestLocale(locale)
   const messages = await getMessages()
   const t = await getTranslations('HomePage')
   return (
@@ -59,4 +71,8 @@ export default async function LocaleLayout({
       </body>
     </html>
   )
+}
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }))
 }
