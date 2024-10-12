@@ -1,4 +1,8 @@
 import DownloadLink from '@/_features/DownloadLink/DownloadLink'
+import LinuxDebSvg from '@/_svgs/LinuxDebSvg'
+import LinuxRPMSvg from '@/_svgs/LinuxRPMSvg'
+import MacOSSvg from '@/_svgs/MacOSSvg'
+import WindowsSvg from '@/_svgs/WindowsSvg'
 import FeatureList from '@/_widgets/FeatureList/FeatureList'
 import { ExternalLink } from 'lucide-react'
 import Image from 'next/image'
@@ -9,7 +13,9 @@ export default async function Home() {
     {
       headers: {
         accept: 'application/vnd.github+json',
+        'User-Agent': `Skill Insight Site/1.0 ${process.env.USER_MAIL}`,
         'X-GitHub-Api-Version': '2022-11-28',
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
       },
     }
   )
@@ -32,14 +38,14 @@ export default async function Home() {
 
   return (
     <main className="p-5">
-      <section className="bg-slate-800 p-5 rounded-lg flex flex-col md:flex-row gap-5 justify-evenly items-center">
+      <section className="bg-muted p-5 rounded-lg flex flex-col md:flex-row gap-5 justify-evenly items-center">
         <div className="flex-1 flex flex-col gap-10 justify-between items-center">
           <h1 className="text-5xl font-bold text-center">Skill Insight</h1>
           <p className="text-lg">
             A cross-platform app that will help you determine what key skills
             are in demand in the labor market right now for your specialty,
             which will{' '}
-            <em className="bg-red-500 p-1 font-bold not-italic">
+            <em className="bg-accent p-1 font-bold not-italic">
               increase your chances of getting hired
             </em>
             .
@@ -56,7 +62,7 @@ export default async function Home() {
                 href={latestReleaseTagUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-red-500 hover:underline"
+                className="text-accent hover:underline"
               >
                 <span>{latestReleaseTagName}</span>
                 <ExternalLink
@@ -69,8 +75,7 @@ export default async function Home() {
             <DownloadLink
               name="Windows"
               url={windowsExtensionURL ?? ''}
-              iconUrl="/windowsIcon.svg"
-              alt="Windows icon"
+              icon={<WindowsSvg />}
               title="Download Skill Insight for Windows"
               aria-label="Download Skill Insight for Windows"
               className="col-span-2"
@@ -78,8 +83,7 @@ export default async function Home() {
             <DownloadLink
               name="MacOS"
               url={macOSExtensionURL ?? ''}
-              iconUrl="/macOSIcon.svg"
-              alt="MacOS icon"
+              icon={<MacOSSvg />}
               title="Download Skill Insight for MacOS"
               aria-label="Download Skill Insight for MacOS"
               className="col-span-2"
@@ -91,8 +95,7 @@ export default async function Home() {
                 </>
               }
               url={linuxRPMExtensionURL ?? ''}
-              iconUrl="/linuxRPMIcon.svg"
-              alt="Linux RPM package manager icon"
+              icon={<LinuxRPMSvg />}
               title="Download Skill Insight for Linux"
               aria-label="Download Skill Insight for Linux"
             />
@@ -103,8 +106,7 @@ export default async function Home() {
                 </>
               }
               url={linuxDebExtensionURL ?? ''}
-              iconUrl="/linuxDebIcon.svg"
-              alt="Linux Debian package manager icon"
+              icon={<LinuxDebSvg />}
               title="Download Skill Insight for Linux"
               aria-label="Download Skill Insight for Linux"
             />
