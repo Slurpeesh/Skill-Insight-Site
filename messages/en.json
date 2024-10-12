@@ -1,0 +1,28 @@
+{
+  "HomePage": {
+    "downloadCall": "Download and give it a try!",
+    "descriptionSection1": "A cross-platform app that will help you determine what key skills are in demand in the labor market right now for your specialty, which will",
+    "descriptionSection2Call": "increase your chances of getting hired",
+    "descriptionSection3": "Find out what skills companies and employers want to see from you right now in order of their demand and popularity.",
+    "descriptionSection4": "See in which regions there are more vacancies in your specialty.",
+    "features": "Features",
+    "keySkillsFeatureName": "Key skills statistics",
+    "citiesDiagramFeatureName": "Cities diagram",
+    "crossPlatformFeatureName": "Cross-platform",
+    "multilanguageFeatureName": "Multilanguage",
+    "darkThemeFeatureName": "Dark theme",
+    "regionSelectionFeatureName": "Region selection",
+    "keySkillsFeatureDescription": "View up-to-date statistics on required skills, the output is available as “raw” data that can be copied and saved with the further possibility of your own analysis, also the output is presented in the form of a chart, if you just need to know the most demanded skills in the specialty.",
+    "citiesDiagramFeatureDescription": "In addition to a chart with the most in-demand skills, you can also view statistics on job openings relative to the city.",
+    "crossPlatformFeatureDescription": "The app is available for Windows, macOS and Linux users. See download links above.",
+    "multilanguageFeatureDescription": "Multiple language support is available, currently English and Russian.",
+    "darkThemeFeatureDescription": "The default theme is customized to match the theme of your device, but if you need to, you can change the theme within the app itself without affecting the theme of the device.",
+    "regionSelectionFeatureDescription": "Choose only the regions you want when collecting statistics. Multiple selections are available.",
+    "downloadWindowsAccessibility": "Download Skill Insight for Windows",
+    "downloadMacOSAccessibility": "Download Skill Insight for MacOS",
+    "downloadLinuxAccessibility": "Download Skill Insight for Linux",
+    "logoAccessibility": "Go to Skill Insight home page",
+    "logoAlt": "Logo of the Skill Insight representing decreasing horizontal bar chart with red bars",
+    "previewImageAlt": "Window of Skill Insight application showind main feature: getting statistics of key skills by user's searching request"
+  }
+}

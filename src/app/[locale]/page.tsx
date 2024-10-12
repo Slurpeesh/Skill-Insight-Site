@@ -5,9 +5,11 @@ import MacOSSvg from '@/_svgs/MacOSSvg'
 import WindowsSvg from '@/_svgs/WindowsSvg'
 import FeatureList from '@/_widgets/FeatureList/FeatureList'
 import { ExternalLink } from 'lucide-react'
+import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 
 export default async function Home() {
+  const t = await getTranslations('HomePage')
   const response = await fetch(
     'https://api.github.com/repos/Slurpeesh/Skill-Insight/releases/latest',
     {
@@ -42,27 +44,24 @@ export default async function Home() {
         <div className="flex-1 flex flex-col gap-10 justify-between items-center">
           <h1 className="text-5xl font-bold text-center">Skill Insight</h1>
           <p className="text-lg">
-            A cross-platform app that will help you determine what key skills
-            are in demand in the labor market right now for your specialty,
-            which will{' '}
+            {t('descriptionSection1')}{' '}
             <em className="bg-accent p-1 font-bold not-italic">
-              increase your chances of getting hired
+              {t('descriptionSection2Call')}
             </em>
             .
             <br />
-            Find out what skills companies and employers want to see from you
-            right now in order of their demand and popularity.
+            {t('descriptionSection3')}
             <br />
-            See in which regions there are more vacancies in your specialty.
+            {t('descriptionSection4')}
           </p>
           <div className="grid grid-cols-2 grid-rows-4 gap-2 max-w-72 m-auto">
             <h3 className="text-xl font-semibold text-center col-span-2 place-self-center">
-              Download and give it a try!{' '}
+              {t('downloadCall')}{' '}
               <a
                 href={latestReleaseTagUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent hover:underline"
+                className="text-accent hover:underline whitespace-nowrap"
               >
                 <span>{latestReleaseTagName}</span>
                 <ExternalLink
@@ -76,16 +75,16 @@ export default async function Home() {
               name="Windows"
               url={windowsExtensionURL ?? ''}
               icon={<WindowsSvg />}
-              title="Download Skill Insight for Windows"
-              aria-label="Download Skill Insight for Windows"
+              title={t('downloadWindowsAccessibility')}
+              aria-label={t('downloadWindowsAccessibility')}
               className="col-span-2"
             />
             <DownloadLink
               name="MacOS"
               url={macOSExtensionURL ?? ''}
               icon={<MacOSSvg />}
-              title="Download Skill Insight for MacOS"
-              aria-label="Download Skill Insight for MacOS"
+              title={t('downloadMacOSAccessibility')}
+              aria-label={t('downloadMacOSAccessibility')}
               className="col-span-2"
             />
             <DownloadLink
@@ -96,8 +95,8 @@ export default async function Home() {
               }
               url={linuxRPMExtensionURL ?? ''}
               icon={<LinuxRPMSvg />}
-              title="Download Skill Insight for Linux"
-              aria-label="Download Skill Insight for Linux"
+              title={t('downloadLinuxAccessibility')}
+              aria-label={t('downloadLinuxAccessibility')}
             />
             <DownloadLink
               name={
@@ -107,15 +106,15 @@ export default async function Home() {
               }
               url={linuxDebExtensionURL ?? ''}
               icon={<LinuxDebSvg />}
-              title="Download Skill Insight for Linux"
-              aria-label="Download Skill Insight for Linux"
+              title={t('downloadLinuxAccessibility')}
+              aria-label={t('downloadLinuxAccessibility')}
             />
           </div>
         </div>
         <div className="flex-1 flex justify-center items-center">
           <Image
             src="/appPreview.png"
-            alt="Window of Skill Insight application showind main feature: getting statistics of key skills by user's searching request"
+            alt={t('previewImageAlt')}
             width={600}
             height={435}
             unoptimized
@@ -124,7 +123,9 @@ export default async function Home() {
         </div>
       </section>
       <section className="mt-20">
-        <h2 className="text-center text-3xl font-semibold mb-5">Features</h2>
+        <h2 className="text-center text-3xl font-semibold mb-5">
+          {t('features')}
+        </h2>
         <FeatureList />
       </section>
     </main>

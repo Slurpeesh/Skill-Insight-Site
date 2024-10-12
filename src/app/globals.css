@@ -6,7 +6,7 @@
   :root {
     --color-background: 0 0% 93%;
     --color-foreground: 222 47% 11%;
-    --color-accent: 0 100% 60%;
+    --color-accent: 0 80% 60%;
     --color-accent-hover: 0 100% 70%;
     --color-muted: 222 27% 84%;
   }
@@ -17,7 +17,7 @@
     --color-accent: 0 100% 40%;
     --color-accent-hover: 0 100% 50%;
     --color-muted: 222 27% 16%;
-    scrollbar-color: hsl(0 0% 25%) hsl(205 40% 10%);
+    scrollbar-color: hsl(222 10% 25%) hsl(222 10% 15%);
   }
 }
 

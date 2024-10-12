@@ -7,55 +7,51 @@ import {
   MonitorCog,
   SunMoon,
 } from 'lucide-react'
+import { getTranslations } from 'next-intl/server'
 
 const featureItemsList = [
   {
-    name: 'Key skills statistics',
+    nameKey: 'keySkillsFeatureName',
     icon: <ChartBarDecreasing />,
-    description:
-      'View up-to-date statistics on required skills, the output is available as “raw” data that can be copied and saved with the further possibility of your own analysis, also the output is presented in the form of a chart, if you just need to know the most demanded skills in the specialty.',
+    descriptionKey: 'keySkillsFeatureDescription',
   },
   {
-    name: 'Cities diagram',
+    nameKey: 'citiesDiagramFeatureName',
     icon: <Building2 />,
-    description:
-      'In addition to a chart with the most in-demand skills, you can also view statistics on job openings relative to the city.',
+    descriptionKey: 'citiesDiagramFeatureDescription',
   },
   {
-    name: 'Cross-platform',
+    nameKey: 'crossPlatformFeatureName',
     icon: <MonitorCog />,
-    description:
-      'The app is available for Windows, macOS and Linux users. See download links above.',
+    descriptionKey: 'crossPlatformFeatureDescription',
   },
   {
-    name: 'Multilanguage',
+    nameKey: 'multilanguageFeatureName',
     icon: <Globe />,
-    description:
-      'Multiple language support is available, currently English and Russian.',
+    descriptionKey: 'multilanguageFeatureDescription',
   },
   {
-    name: 'Dark theme',
+    nameKey: 'darkThemeFeatureName',
     icon: <SunMoon />,
-    description:
-      'The default theme is customized to match the theme of your device, but if you need to, you can change the theme within the app itself without affecting the theme of the device.',
+    descriptionKey: 'darkThemeFeatureDescription',
   },
   {
-    name: 'Region selection',
+    nameKey: 'regionSelectionFeatureName',
     icon: <Blocks />,
-    description:
-      'Choose only the regions you want when collecting statistics. Multiple selections are available.',
+    descriptionKey: 'regionSelectionFeatureDescription',
   },
 ]
 
-export default function FeatureList() {
+export default async function FeatureList() {
+  const t = await getTranslations('HomePage')
   return (
     <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
       {featureItemsList.map((featureItem) => (
         <FeatureItem
-          key={featureItem.name}
-          name={featureItem.name}
+          key={featureItem.nameKey}
+          name={t(featureItem.nameKey)}
           icon={featureItem.icon}
-          description={featureItem.description}
+          description={t(featureItem.descriptionKey)}
         />
       ))}
     </ul>
