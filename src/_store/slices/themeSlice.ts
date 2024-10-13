@@ -16,10 +16,12 @@ export const themeSlice = createSlice({
     setLight: (state) => {
       document.querySelector('html')!.setAttribute('class', 'light')
       state.value = 'light'
+      localStorage.setItem('theme', 'light')
     },
     setDark: (state) => {
       document.querySelector('html')!.setAttribute('class', 'dark')
       state.value = 'dark'
+      localStorage.setItem('theme', 'dark')
     },
   },
 })

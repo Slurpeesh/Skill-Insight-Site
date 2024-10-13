@@ -15,7 +15,7 @@ export async function generateMetadata({
 }: Readonly<{
   params: { locale: string }
 }>) {
-  const t = await getTranslations({ locale, namespace: 'Metadata' })
+  const t = await getTranslations({ locale, namespace: 'HomePage' })
 
   return {
     title: 'Skill Insight',

@@ -25,5 +25,9 @@
     "logoAccessibility": "Go to Skill Insight home page",
     "logoAlt": "Logo of the Skill Insight representing decreasing horizontal bar chart with red bars",
     "previewImageAlt": "Window of Skill Insight application showind main feature: getting statistics of key skills by user's searching request"
+  },
+  "NotFoundPage": {
+    "returnHome": "Return Home",
+    "couldNotFound": "Could not find requested resource"
   }
 }
