@@ -1,10 +1,8 @@
 import { Home } from 'lucide-react'
-import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
 import StoreProvider from './StoreProvider'
 
-export default async function NotFound() {
-  const t = await getTranslations('NotFoundPage')
+export default function NotFound() {
   return (
     <html lang="en">
       <StoreProvider>
@@ -13,13 +11,13 @@ export default async function NotFound() {
             <span className="border-r-2 border-r-foreground pr-4">404</span>
             <span className="pl-4">Not Found</span>
           </h2>
-          <p className="text-center">{t('couldNotFound')}</p>
+          <p className="text-center">Could not find requested resource</p>
           <Link
             href="/"
             className="flex gap-2 items-center font-semibold text-accent hover:underline hover:underline-offset-2"
           >
             <Home />
-            <span>{t('returnHome')}</span>
+            <span>Return Home</span>
           </Link>
         </body>
       </StoreProvider>
