@@ -1,7 +1,7 @@
 import ThemeButton from '@/_features/ThemeButton/ThemeButton'
 import GithubSvg from '@/_svgs/GithubSvg'
 import { routing } from '@/i18n/routing'
-import { Metadata } from 'next'
+import { Metadata, Viewport } from 'next'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 
@@ -27,11 +27,21 @@ export async function generateMetadata({
       t('application'),
       t('app'),
       t('desktop'),
+      t('free'),
+      t('download'),
       'windows',
       'macos',
       'linux',
     ],
   }
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'hsl(0, 0%, 93%)' },
+    { media: '(prefers-color-scheme: dark)', color: 'hsl(222, 47%, 11%)' },
+  ],
+  colorScheme: 'dark light',
 }
 
 export default async function LocaleLayout({
@@ -61,6 +71,7 @@ export default async function LocaleLayout({
           <a
             href="https://github.com/Slurpeesh/Skill-Insight"
             target="_blank"
+            rel="noopener noreferrer"
             className="hover:scale-110 transition-transform"
           >
             <GithubSvg />

@@ -31,7 +31,9 @@
     "application": "приложение",
     "app": "приложение",
     "statistics": "статистика",
-    "desktop": "десктоп"
+    "desktop": "десктоп",
+    "free": "бесплатно",
+    "download": "скачать"
   },
   "NotFoundPage": {
     "returnHome": "Вернуться на Главную",

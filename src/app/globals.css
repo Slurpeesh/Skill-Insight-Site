@@ -9,6 +9,7 @@
     --color-accent: 0 80% 60%;
     --color-accent-hover: 0 100% 70%;
     --color-muted: 222 27% 84%;
+    scrollbar-color: hsl(222 10% 70%) hsl(222 10% 85%);
   }
 
   .dark {

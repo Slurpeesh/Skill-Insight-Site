@@ -31,7 +31,9 @@
     "application": "application",
     "app": "app",
     "statistics": "statistics",
-    "desktop": "desktop"
+    "desktop": "desktop",
+    "free": "free",
+    "download": "download"
   },
   "NotFoundPage": {
     "returnHome": "Return Home",
