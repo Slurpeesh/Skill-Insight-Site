@@ -1,5 +1,6 @@
 import ThemeButton from '@/_features/ThemeButton/ThemeButton'
 import GithubSvg from '@/_svgs/GithubSvg'
+import { HOST } from '@/config'
 import { routing } from '@/i18n/routing'
 import { Metadata, Viewport } from 'next'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
@@ -19,6 +20,7 @@ export async function generateMetadata({
     creator: 'Slurpeesh',
     publisher: 'Slurpeesh',
     authors: [{ name: 'Slurpeesh', url: 'https://slurpeesh-site.vercel.app/' }],
+    metadataBase: new URL(HOST),
     keywords: [
       'skill',
       'insight',
