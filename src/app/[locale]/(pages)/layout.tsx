@@ -1,6 +1,7 @@
 import ThemeButton from '@/_features/ThemeButton/ThemeButton'
 import GithubSvg from '@/_svgs/GithubSvg'
 import { routing } from '@/i18n/routing'
+import { Metadata } from 'next'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import Image from 'next/image'
 
@@ -8,12 +9,28 @@ export async function generateMetadata({
   params: { locale },
 }: Readonly<{
   params: { locale: string }
-}>) {
-  const t = await getTranslations({ locale, namespace: 'HomePage' })
+}>): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: 'MetadataHomePage' })
 
   return {
     title: 'Skill Insight',
-    description: t('metaDescription'),
+    description: t('description'),
+    applicationName: 'Skill Insight',
+    creator: 'Slurpeesh',
+    publisher: 'Slurpeesh',
+    authors: [{ name: 'Slurpeesh', url: 'https://slurpeesh-site.vercel.app/' }],
+    keywords: [
+      'skill',
+      'insight',
+      t('job'),
+      t('statistics'),
+      t('application'),
+      t('app'),
+      t('desktop'),
+      'windows',
+      'macos',
+      'linux',
+    ],
   }
 }
 

@@ -1,6 +1,6 @@
+import { Link } from '@/i18n/routing'
 import { Home } from 'lucide-react'
 import { useTranslations } from 'next-intl'
-import Link from 'next/link'
 
 export default function NotFound() {
   const t = useTranslations('NotFoundPage')

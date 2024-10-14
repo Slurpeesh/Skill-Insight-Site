@@ -18,11 +18,8 @@ export default function StoreProvider({
   useEffect(() => {
     setIsClient(true)
     let theme = localStorage.getItem('theme')
-    if (theme) {
-      document.documentElement.setAttribute('class', theme)
-    } else {
+    if (!theme) {
       theme = isDarkModePrefered ? 'dark' : 'light'
-      document.documentElement.setAttribute('class', theme)
     }
     document.documentElement.setAttribute('class', theme)
     storeRef.current!.dispatch(theme === 'dark' ? setDark() : setLight())

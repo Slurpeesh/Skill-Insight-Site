@@ -1,24 +1,15 @@
 import { routing } from '@/i18n/routing'
 import { NextIntlClientProvider } from 'next-intl'
-import {
-  getMessages,
-  getTranslations,
-  unstable_setRequestLocale,
-} from 'next-intl/server'
+import { getMessages, unstable_setRequestLocale } from 'next-intl/server'
+import { Inter } from 'next/font/google'
 import StoreProvider from '../StoreProvider'
+import { cn } from '../_lib/utils'
 
-export async function generateMetadata({
-  params: { locale },
-}: Readonly<{
-  params: { locale: string }
-}>) {
-  const t = await getTranslations({ locale, namespace: 'HomePage' })
-
-  return {
-    title: 'Skill Insight',
-    description: t('metaDescription'),
-  }
-}
+const inter = Inter({
+  subsets: ['latin', 'cyrillic'],
+  display: 'swap',
+  variable: '--font-inter',
+})
 
 export default async function LocaleLayout({
   children,
@@ -31,7 +22,12 @@ export default async function LocaleLayout({
   const messages = await getMessages()
   return (
     <html lang={locale}>
-      <body className="bg-background text-foreground">
+      <body
+        className={cn(
+          `${inter.variable}`,
+          'bg-background text-foreground font-inter'
+        )}
+      >
         <StoreProvider>
           <NextIntlClientProvider messages={messages}>
             {children}

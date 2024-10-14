@@ -12,6 +12,9 @@ const config: Config = {
         'accent-hover': 'hsl(var(--color-accent-hover) / <alpha-value>)',
         muted: 'hsl(var(--color-muted) / <alpha-value>)',
       },
+      fontFamily: {
+        inter: ['var(--font-inter)'],
+      },
     },
   },
   plugins: [],

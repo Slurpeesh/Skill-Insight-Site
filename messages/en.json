@@ -1,6 +1,5 @@
 {
   "HomePage": {
-    "metaDescription": "Skill Insight is the desktop application, that displays statistics on key skills at the user's request",
     "downloadCall": "Download and give it a try!",
     "descriptionSection1": "A cross-platform app that will help you determine what key skills are in demand in the labor market right now for your specialty, which will",
     "descriptionSection2Call": "increase your chances of getting hired",
@@ -25,6 +24,14 @@
     "logoAccessibility": "Go to Skill Insight home page",
     "logoAlt": "Logo of the Skill Insight representing decreasing horizontal bar chart with red bars",
     "previewImageAlt": "Window of Skill Insight application showind main feature: getting statistics of key skills by user's searching request"
+  },
+  "MetadataHomePage": {
+    "description": "Skill Insight is the desktop application, that displays statistics on key skills at the user's request",
+    "job": "job",
+    "application": "application",
+    "app": "app",
+    "statistics": "statistics",
+    "desktop": "desktop"
   },
   "NotFoundPage": {
     "returnHome": "Return Home",
