@@ -23,7 +23,10 @@
     "downloadLinuxAccessibility": "Download Skill Insight for Linux",
     "logoAccessibility": "Go to Skill Insight home page",
     "logoAlt": "Logo of the Skill Insight representing decreasing horizontal bar chart with red bars",
-    "previewImageAlt": "Window of Skill Insight application showind main feature: getting statistics of key skills by user's searching request"
+    "previewImageAlt": "Window of Skill Insight application showind main feature: getting statistics of key skills by user's searching request",
+    "changeToLightTheme": "Change to light theme",
+    "changeToDarkTheme": "Change to dark theme",
+    "visitGitHubRepo": "Visit GitHub repository of the Skill Insight application"
   },
   "MetadataHomePage": {
     "description": "Skill Insight is the desktop application, that displays statistics on key skills at the user's request",

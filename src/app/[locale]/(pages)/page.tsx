@@ -60,7 +60,7 @@ export default async function Home({
             {t('descriptionSection4')}
           </p>
           <div className="grid grid-cols-2 grid-rows-4 gap-2 max-w-72 m-auto">
-            <h3 className="text-xl font-semibold text-center col-span-2 place-self-center">
+            <h2 className="text-xl font-semibold text-center col-span-2 place-self-center">
               {t('downloadCall')}{' '}
               <a
                 href={latestReleaseTagUrl}
@@ -75,7 +75,7 @@ export default async function Home({
                   height={16}
                 />
               </a>
-            </h3>
+            </h2>
             <DownloadLink
               name="Windows"
               url={windowsExtensionURL ?? ''}
@@ -118,7 +118,7 @@ export default async function Home({
         </div>
         <div className="flex-1 flex justify-center items-center">
           <Image
-            src="/appPreview.png"
+            src="/appPreview.webp"
             alt={t('previewImageAlt')}
             width={600}
             height={435}

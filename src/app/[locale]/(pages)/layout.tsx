@@ -74,6 +74,7 @@ export default async function LocaleLayout({
             href="https://github.com/Slurpeesh/Skill-Insight"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={t('visitGitHubRepo')}
             className="hover:scale-110 transition-transform"
           >
             <GithubSvg />

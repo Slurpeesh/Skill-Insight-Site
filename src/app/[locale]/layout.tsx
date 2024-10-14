@@ -1,3 +1,4 @@
+import WebVitals from '@/_features/WebVitals/WebVitals'
 import { routing } from '@/i18n/routing'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server'
@@ -28,6 +29,7 @@ export default async function LocaleLayout({
           'bg-background text-foreground font-inter'
         )}
       >
+        {process.env.NODE_ENV === 'development' && <WebVitals />}
         <StoreProvider>
           <NextIntlClientProvider messages={messages}>
             {children}
