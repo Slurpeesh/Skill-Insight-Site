@@ -1,5 +1,6 @@
 import WebVitals from '@/_features/WebVitals/WebVitals'
 import { routing } from '@/i18n/routing'
+import { Analytics } from '@vercel/analytics/react'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server'
 import { Inter } from 'next/font/google'
@@ -30,6 +31,7 @@ export default async function LocaleLayout({
         )}
       >
         {process.env.NODE_ENV === 'development' && <WebVitals />}
+        {process.env.NODE_ENV === 'production' && <Analytics />}
         <StoreProvider>
           <NextIntlClientProvider messages={messages}>
             {children}
