@@ -35,6 +35,9 @@ export async function generateMetadata({
       'macos',
       'linux',
     ],
+    verification: {
+      google: '4qdTuM1x2frYyMKYPrCUO-7RYVSESIBtk7Xe3OdqA2s',
+    },
   }
 }
 
