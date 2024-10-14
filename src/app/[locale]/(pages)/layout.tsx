@@ -37,6 +37,7 @@ export async function generateMetadata({
     ],
     verification: {
       google: '4qdTuM1x2frYyMKYPrCUO-7RYVSESIBtk7Xe3OdqA2s',
+      yandex: '76e5de4abc071e28',
     },
   }
 }
